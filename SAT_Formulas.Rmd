@@ -1,0 +1,2312 @@
+---
+title: "SAT Formulas"
+author: "Daniel Olds"
+---
+# untar sat files: 
+```{r}
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+untar("uf50-218.tar.gz")
+```
+
+# untar unsat files: 
+```{r}
+setwd("C:/Users/Daniel Olds/Documents/dimacs/unsat")
+untar("uuf50-218.tar.gz")
+```
+
+# 80 Formulas: 40 Satisfiable, 40 Unsatisfiable
+
+# Satisfiable Formulas
+# 50 Variables, 218 Clauses 
+
+# Formula 1
+```{r}
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-01.cnf') 
+open(con);
+sat_1 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_1[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_1 <- sat_1[9:226]
+sat_1 <- lapply(sat_1, function(x) x[x != "0"])
+sat_1 <- lapply(sat_1, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_1 = transform(sat_1)
+
+# Check Literal Count
+count(sat_1)
+
+close(con)
+```
+
+# Formula 2
+```{r}
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+
+con <- file('uf50-010.cnf') 
+open(con);
+sat_2 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_2[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+sat_2 <- sat_2[9:226]
+sat_2 <- lapply(sat_2, function(x) x[x != "0"])
+sat_2 <- lapply(sat_2, function(x) x[!is.na(x)])
+
+sat_2 = transform(sat_2)
+count(sat_2)
+
+close(con)
+
+```
+
+# Formula 3
+```{r}
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0100.cnf') 
+open(con);
+sat_3 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_3[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+sat_3 <- sat_3[9:226]
+sat_3 <- lapply(sat_3, function(x) x[x != "0"])
+sat_3 <- lapply(sat_3, function(x) x[!is.na(x)])
+
+sat_3 = transform(sat_3)
+count(sat_3)
+
+close(con)
+```
+
+# Formula 4
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0263.cnf') 
+open(con);
+sat_4 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_4[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_4 <- sat_4[9:226]
+sat_4 <- lapply(sat_4, function(x) x[x != "0"])
+sat_4 <- lapply(sat_4, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_4 = transform(sat_4)
+
+# Check Literal Count 
+count(sat_4)
+
+close(con)
+
+```
+
+# Formula 5 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0101.cnf') 
+open(con);
+sat_5 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_5[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_5 <- sat_5[9:226]
+sat_5 <- lapply(sat_5, function(x) x[x != "0"])
+sat_5 <- lapply(sat_5, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_5 = transform(sat_5)
+
+#Check Literal Count 
+count(sat_5)
+
+close(con)
+
+```
+
+# Formula 6 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0102.cnf') 
+open(con);
+sat_6 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_6[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_6 <- sat_6[9:226]
+sat_6 <- lapply(sat_6, function(x) x[x != "0"])
+sat_6 <- lapply(sat_6, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_6 = transform(sat_6)
+
+#Check Literal Count 
+count(sat_6)
+
+close(con)
+
+```
+
+# Formula 7
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0103.cnf') 
+open(con);
+sat_7 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_7[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_7 <- sat_7[9:226]
+sat_7 <- lapply(sat_7, function(x) x[x != "0"])
+sat_7 <- lapply(sat_7, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_7 = transform(sat_7)
+
+#Check Literal Count 
+count(sat_7)
+
+close(con)
+
+```
+
+# Formula 8 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0104.cnf') 
+open(con);
+sat_8 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_8[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_8 <- sat_8[9:226]
+sat_8 <- lapply(sat_8, function(x) x[x != "0"])
+sat_8 <- lapply(sat_8, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_8 = transform(sat_8)
+
+#Check Literal Count 
+count(sat_8)
+
+close(con)
+
+```
+
+# Formula 9
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0105.cnf') 
+open(con);
+sat_9 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_9[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_9 <- sat_9[9:226]
+sat_9 <- lapply(sat_9, function(x) x[x != "0"])
+sat_9 <- lapply(sat_9, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_9 = transform(sat_9)
+
+#Check Literal Count 
+count(sat_9)
+
+close(con)
+
+```
+
+# Formula 10 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0106.cnf') 
+open(con);
+sat_10 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_10[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_10 <- sat_10[9:226]
+sat_10 <- lapply(sat_10, function(x) x[x != "0"])
+sat_10 <- lapply(sat_10, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_10 = transform(sat_10)
+
+# Check Literal Count 
+count(sat_10)
+
+close(con)
+
+```
+
+# Formula 11
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0107.cnf') 
+open(con);
+sat_11 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_11[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_11 <- sat_11[9:226]
+sat_11 <- lapply(sat_11, function(x) x[x != "0"])
+sat_11 <- lapply(sat_11, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_11 = transform(sat_11)
+
+#Check Literal Count 
+count(sat_11)
+
+close(con)
+
+```
+
+# Formula 12
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0108.cnf') 
+open(con);
+sat_12 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_12[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_12 <- sat_12[9:226]
+sat_12 <- lapply(sat_12, function(x) x[x != "0"])
+sat_12 <- lapply(sat_12, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_12 = transform(sat_12)
+
+#Check Literal Count 
+count(sat_12)
+
+close(con)
+
+```
+
+# Formula 13 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0273.cnf') 
+open(con);
+sat_13 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_13[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_13 <- sat_13[9:226]
+sat_13 <- lapply(sat_13, function(x) x[x != "0"])
+sat_13 <- lapply(sat_13, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_13 = transform(sat_13)
+
+#Check Literal Count 
+count(sat_13)
+
+close(con)
+
+```
+
+# Formula 14
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0110.cnf') 
+open(con);
+sat_14 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_14[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_14 <- sat_14[9:226]
+sat_14 <- lapply(sat_14, function(x) x[x != "0"])
+sat_14 <- lapply(sat_14, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_14 = transform(sat_14)
+
+#Check Literal Count 
+count(sat_14)
+
+close(con)
+
+```
+
+# Formula 15
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0111.cnf') 
+open(con);
+sat_15 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_15[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_15 <- sat_15[9:226]
+sat_15 <- lapply(sat_15, function(x) x[x != "0"])
+sat_15 <- lapply(sat_15, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_15 = transform(sat_15)
+
+#Check Literal Count 
+count(sat_15)
+
+close(con)
+
+```
+
+# Formula 16
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0112.cnf') 
+open(con);
+sat_16 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_16[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_16 <- sat_16[9:226]
+sat_16 <- lapply(sat_16, function(x) x[x != "0"])
+sat_16 <- lapply(sat_16, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_16 = transform(sat_16)
+
+#Check Literal Count 
+count(sat_16)
+
+close(con)
+
+```
+
+# Formula 17
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0113.cnf') 
+open(con);
+sat_17 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_17[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_17 <- sat_17[9:226]
+sat_17 <- lapply(sat_17, function(x) x[x != "0"])
+sat_17 <- lapply(sat_17, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_17 = transform(sat_17)
+
+#Check Literal Count 
+count(sat_17)
+
+close(con)
+
+```
+
+# Formula 18 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0114.cnf') 
+open(con);
+sat_18 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_18[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_18 <- sat_18[9:226]
+sat_18 <- lapply(sat_18, function(x) x[x != "0"])
+sat_18 <- lapply(sat_18, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_18 = transform(sat_18)
+
+#Check Literal Count 
+count(sat_18)
+
+close(con)
+
+```
+
+# Formula 19
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0115.cnf') 
+open(con);
+sat_19 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_19[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_19 <- sat_19[9:226]
+sat_19 <- lapply(sat_19, function(x) x[x != "0"])
+sat_19 <- lapply(sat_19, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_19 = transform(sat_19)
+
+#Check Literal Count 
+count(sat_19)
+
+close(con)
+
+```
+
+# Formula 20
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0116.cnf') 
+open(con);
+sat_20 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_20[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_20 <- sat_20[9:226]
+sat_20 <- lapply(sat_20, function(x) x[x != "0"])
+sat_20 <- lapply(sat_20, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_20 = transform(sat_20)
+
+#Check Literal Count 
+count(sat_20)
+
+close(con)
+
+```
+# TESTING SATISFIABILITY SET 
+# Formula 1
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0203.cnf') 
+open(con);
+sat_21 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_21[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_21 <- sat_21[9:226]
+sat_21 <- lapply(sat_21, function(x) x[x != "0"])
+sat_21 <- lapply(sat_21, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_21 = transform(sat_21)
+
+#Check Literal Count 
+count(sat_21)
+
+close(con)
+
+```
+
+# Formula 2
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0204.cnf') 
+open(con);
+sat_22 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_22[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_22 <- sat_22[9:226]
+sat_22 <- lapply(sat_22, function(x) x[x != "0"])
+sat_22 <- lapply(sat_22, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_22 = transform(sat_22)
+
+#Check Literal Count 
+count(sat_22)
+
+close(con)
+
+```
+
+# Formula 3
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0205.cnf') 
+open(con);
+sat_23 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_23[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_23 <- sat_23[9:226]
+sat_23 <- lapply(sat_23, function(x) x[x != "0"])
+sat_23 <- lapply(sat_23, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_23 = transform(sat_23)
+
+#Check Literal Count 
+count(sat_23)
+
+close(con)
+
+```
+
+# Formula 4
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0206.cnf') 
+open(con);
+sat_24 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_24[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_24 <- sat_24[9:226]
+sat_24 <- lapply(sat_24, function(x) x[x != "0"])
+sat_24 <- lapply(sat_24, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_24 = transform(sat_24)
+
+#Check Literal Count 
+count(sat_24)
+
+close(con)
+
+```
+# Formula 5 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0211.cnf') 
+open(con);
+sat_25 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_25[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_25 <- sat_25[9:226]
+sat_25 <- lapply(sat_25, function(x) x[x != "0"])
+sat_25 <- lapply(sat_25, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_25 = transform(sat_25)
+
+#Check Literal Count 
+count(sat_25)
+
+close(con)
+
+```
+
+# Formula 6 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0212.cnf') 
+open(con);
+sat_26 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_26[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_26 <- sat_26[9:226]
+sat_26 <- lapply(sat_26, function(x) x[x != "0"])
+sat_26 <- lapply(sat_26, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_26 = transform(sat_26)
+
+#Check Literal Count 
+count(sat_26)
+
+close(con)
+
+```
+
+# Formula 7
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0300.cnf') 
+open(con);
+sat_27 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_27[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_27 <- sat_27[9:226]
+sat_27 <- lapply(sat_27, function(x) x[x != "0"])
+sat_27 <- lapply(sat_27, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_27 = transform(sat_27)
+
+#Check Literal Count 
+count(sat_27)
+
+close(con)
+
+```
+
+# Formula 8 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0301.cnf') 
+open(con);
+sat_28 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_28[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_28 <- sat_28[9:226]
+sat_28 <- lapply(sat_28, function(x) x[x != "0"])
+sat_28 <- lapply(sat_28, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_28 = transform(sat_28)
+
+#Check Literal Count 
+count(sat_28)
+
+close(con)
+
+```
+
+# Formula 9
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0302.cnf') 
+open(con);
+sat_29 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_29[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_29 <- sat_29[9:226]
+sat_29 <- lapply(sat_29, function(x) x[x != "0"])
+sat_29 <- lapply(sat_29, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_29 = transform(sat_29)
+
+#Check Literal Count 
+count(sat_29)
+
+close(con)
+
+```
+
+# Formula 10 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0303.cnf') 
+open(con);
+sat_30 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_30[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_30 <- sat_30[9:226]
+sat_30 <- lapply(sat_30, function(x) x[x != "0"])
+sat_30 <- lapply(sat_30, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_30 = transform(sat_30)
+
+#Check Literal Count 
+count(sat_30)
+
+close(con)
+
+```
+
+# Formula 11
+```{r}
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0304.cnf') 
+open(con);
+sat_31 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_31[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_31 <- sat_31[9:226]
+sat_31 <- lapply(sat_31, function(x) x[x != "0"])
+sat_31 <- lapply(sat_31, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_31 = transform(sat_31)
+
+#Check Literal Count 
+count(sat_31)
+
+close(con)
+
+```
+
+# Formula 12
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0305.cnf') 
+open(con);
+sat_32 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_32[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_32 <- sat_32[9:226]
+sat_32 <- lapply(sat_32, function(x) x[x != "0"])
+sat_32 <- lapply(sat_32, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_32 = transform(sat_32)
+
+#Check Literal Count 
+count(sat_32)
+
+close(con)
+
+```
+
+# Formula 13
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0306.cnf') 
+open(con);
+sat_33 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_33[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_33 <- sat_33[9:226]
+sat_33 <- lapply(sat_33, function(x) x[x != "0"])
+sat_33 <- lapply(sat_33, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_33 = transform(sat_33)
+
+#Check Literal Count 
+count(sat_33)
+
+close(con)
+
+```
+
+# Formula 14
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0307.cnf') 
+open(con);
+sat_34 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_34[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_34 <- sat_34[9:226]
+sat_34 <- lapply(sat_34, function(x) x[x != "0"])
+sat_34 <- lapply(sat_34, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_34 = transform(sat_34)
+
+#Check Literal Count 
+count(sat_34)
+
+close(con)
+
+```
+
+# Formula 15 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0309.cnf') 
+open(con);
+sat_35 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_35[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_35 <- sat_35[9:226]
+sat_35 <- lapply(sat_35, function(x) x[x != "0"])
+sat_35 <- lapply(sat_35, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_35 = transform(sat_35)
+
+#Check Literal Count 
+count(sat_35)
+
+close(con)
+
+```
+
+# Formula 16 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0310.cnf') 
+open(con);
+sat_36 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_36[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_36 <- sat_36[9:226]
+sat_36 <- lapply(sat_36, function(x) x[x != "0"])
+sat_36 <- lapply(sat_36, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_36 = transform(sat_36)
+
+#Check Literal Count 
+count(sat_36)
+
+close(con)
+
+```
+
+# Formula 17
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0312.cnf') 
+open(con);
+sat_37 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_37[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_37 <- sat_37[9:226]
+sat_37 <- lapply(sat_37, function(x) x[x != "0"])
+sat_37 <- lapply(sat_37, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_37 = transform(sat_37)
+
+#Check Literal Count 
+count(sat_37)
+
+close(con)
+
+```
+
+# Formula 18 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0313.cnf') 
+open(con);
+sat_38 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_38[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_38 <- sat_38[9:226]
+sat_38 <- lapply(sat_38, function(x) x[x != "0"])
+sat_38 <- lapply(sat_38, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_38 = transform(sat_38)
+
+#Check Literal Count 
+count(sat_38)
+
+close(con)
+
+```
+
+# Formula 19
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0315.cnf') 
+open(con);
+sat_39 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_39[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_39 <- sat_39[9:226]
+sat_39 <- lapply(sat_39, function(x) x[x != "0"])
+sat_39 <- lapply(sat_39, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_39 = transform(sat_39)
+
+#Check Literal Count 
+count(sat_39)
+
+close(con)
+
+```
+
+# Formula 20 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/sat")
+con <- file('uf50-0316.cnf') 
+open(con);
+sat_40 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  sat_40[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+sat_40 <- sat_40[9:226]
+sat_40 <- lapply(sat_40, function(x) x[x != "0"])
+sat_40 <- lapply(sat_40, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+sat_40 = transform(sat_40)
+
+#Check Literal Count 
+count(sat_40)
+
+close(con)
+
+```
+
+
+#########################################################################################################
+# Unsatisfiable Formulas
+# 50 Variables, 218 Clauses 
+
+# Formula 1 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-010.cnf') 
+open(con);
+unsat_1 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_1[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_1 <- unsat_1[9:226]
+unsat_1 <- lapply(unsat_1, function(x) x[x != "0"])
+unsat_1 <- lapply(unsat_1, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_1 = transform(unsat_1)
+
+# Check Literal Count 
+count(unsat_1)
+
+close(con)
+
+```
+
+# Formula 2
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-01000.cnf') 
+open(con);
+unsat_2 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_2[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_2 <- unsat_2[9:226]
+unsat_2 <- lapply(unsat_2, function(x) x[x != "0"])
+unsat_2 <- lapply(unsat_2, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_2 = transform(unsat_2)
+
+# Check Literal Count 
+count(unsat_2)
+
+close(con)
+
+```
+
+# Formula 3
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0101.cnf') 
+open(con);
+unsat_3 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_3[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_3 <- unsat_3[9:226]
+unsat_3 <- lapply(unsat_3, function(x) x[x != "0"])
+unsat_3 <- lapply(unsat_3, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_3 = transform(unsat_3)
+
+# Check Literal Count 
+count(unsat_3)
+
+close(con)
+
+```
+
+# Formula 4 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0102.cnf') 
+open(con);
+unsat_4 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_4[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_4 <- unsat_4[9:226]
+unsat_4 <- lapply(unsat_4, function(x) x[x != "0"])
+unsat_4 <- lapply(unsat_4, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_4 = transform(unsat_4)
+
+# Check Literal Count 
+count(unsat_4)
+
+close(con)
+
+```
+
+# Formula 5
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0103.cnf') 
+open(con);
+unsat_5 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_5[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_5 <- unsat_5[9:226]
+unsat_5 <- lapply(unsat_5, function(x) x[x != "0"])
+unsat_5 <- lapply(unsat_5, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_5 = transform(unsat_5)
+
+# Check Literal Count 
+count(unsat_5)
+
+close(con)
+
+```
+
+# Formula 6
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0105.cnf') 
+open(con);
+unsat_6 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_6[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_6 <- unsat_6[9:226]
+unsat_6 <- lapply(unsat_6, function(x) x[x != "0"])
+unsat_6 <- lapply(unsat_6, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_6 = transform(unsat_6)
+
+# Check Literal Count 
+count(unsat_6)
+
+close(con)
+
+```
+
+
+# Formula 7
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0106.cnf') 
+open(con);
+unsat_7 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_7[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_7 <- unsat_7[9:226]
+unsat_7 <- lapply(unsat_7, function(x) x[x != "0"])
+unsat_7 <- lapply(unsat_7, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_7 = transform(unsat_7)
+
+# Check Literal Count 
+count(unsat_7)
+
+close(con)
+
+```
+
+# Formula 8
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0107.cnf') 
+open(con);
+unsat_8 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_8[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_8 <- unsat_8[9:226]
+unsat_8 <- lapply(unsat_8, function(x) x[x != "0"])
+unsat_8 <- lapply(unsat_8, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_8 = transform(unsat_8)
+
+# Check Literal Count 
+count(unsat_8)
+
+close(con)
+
+```
+
+# Formula 9
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0108.cnf') 
+open(con);
+unsat_9 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_9[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_9 <- unsat_9[9:226]
+unsat_9 <- lapply(unsat_9, function(x) x[x != "0"])
+unsat_9 <- lapply(unsat_9, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_9 = transform(unsat_9)
+
+# Check Literal Count 
+count(unsat_9)
+
+close(con)
+
+```
+
+# Formula 10
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0109.cnf') 
+open(con);
+unsat_10 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_10[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_10 <- unsat_10[9:226]
+unsat_10 <- lapply(unsat_10, function(x) x[x != "0"])
+unsat_10 <- lapply(unsat_10, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_10 = transform(unsat_10)
+
+# Check Literal Count 
+count(unsat_10)
+
+close(con)
+
+```
+
+# Formula 11
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-011.cnf') 
+open(con);
+unsat_11 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_11[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_11 <- unsat_11[9:226]
+unsat_11 <- lapply(unsat_11, function(x) x[x != "0"])
+unsat_11 <- lapply(unsat_11, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_11 = transform(unsat_11)
+
+# Check Literal Count 
+count(unsat_11)
+
+close(con)
+
+```
+
+# Formula 12
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0111.cnf') 
+open(con);
+unsat_12 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_12[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_12 <- unsat_12[9:226]
+unsat_12 <- lapply(unsat_12, function(x) x[x != "0"])
+unsat_12 <- lapply(unsat_12, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_12 = transform(unsat_12)
+
+# Check Literal Count 
+count(unsat_12)
+
+close(con)
+
+```
+
+# Formula 13
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0112.cnf') 
+open(con);
+unsat_13 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_13[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_13 <- unsat_13[9:226]
+unsat_13 <- lapply(unsat_13, function(x) x[x != "0"])
+unsat_13 <- lapply(unsat_13, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_13 = transform(unsat_13)
+
+# Check Literal Count 
+count(unsat_13)
+
+close(con)
+
+```
+
+# Formula 14
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0113.cnf') 
+open(con);
+unsat_14 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_14[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_14 <- unsat_14[9:226]
+unsat_14 <- lapply(unsat_14, function(x) x[x != "0"])
+unsat_14 <- lapply(unsat_14, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_14 = transform(unsat_14)
+
+# Check Literal Count 
+count(unsat_14)
+
+close(con)
+
+```
+
+# Formula 15 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0115.cnf') 
+open(con);
+unsat_15 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_15[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_15 <- unsat_15[9:226]
+unsat_15 <- lapply(unsat_15, function(x) x[x != "0"])
+unsat_15 <- lapply(unsat_15, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_15 = transform(unsat_15)
+
+# Check Literal Count 
+count(unsat_15)
+
+close(con)
+
+```
+
+# Formula 16 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0116.cnf') 
+open(con);
+unsat_16 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_16[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_16 <- unsat_16[9:226]
+unsat_16 <- lapply(unsat_16, function(x) x[x != "0"])
+unsat_16 <- lapply(unsat_16, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_16 = transform(unsat_16)
+
+# Check Literal Count 
+count(unsat_16)
+
+close(con)
+
+```
+
+# Formula 17
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0117.cnf') 
+open(con);
+unsat_17 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_17[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_17 <- unsat_17[9:226]
+unsat_17 <- lapply(unsat_17, function(x) x[x != "0"])
+unsat_17 <- lapply(unsat_17, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_17 = transform(unsat_17)
+
+# Check Literal Count 
+count(unsat_17)
+
+close(con)
+
+```
+
+# Formula 18 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0118.cnf') 
+open(con);
+unsat_18 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_18[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_18 <- unsat_18[9:226]
+unsat_18 <- lapply(unsat_18, function(x) x[x != "0"])
+unsat_18 <- lapply(unsat_18, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_18 = transform(unsat_18)
+
+# Check Literal Count 
+count(unsat_18)
+
+close(con)
+
+```
+
+# Formula 19
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0119.cnf') 
+open(con);
+unsat_19 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_19[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_19 <- unsat_19[9:226]
+unsat_19 <- lapply(unsat_19, function(x) x[x != "0"])
+unsat_19 <- lapply(unsat_19, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_19 = transform(unsat_19)
+
+# Check Literal Count 
+count(unsat_19)
+
+close(con)
+
+```
+
+# Formula 20 
+```{r}
+
+# Open File
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0120.cnf') 
+open(con);
+unsat_20 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_20[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_20 <- unsat_20[9:226]
+unsat_20 <- lapply(unsat_20, function(x) x[x != "0"])
+unsat_20 <- lapply(unsat_20, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_20 = transform(unsat_20)
+
+# Check Literal Count 
+count(unsat_20)
+
+close(con)
+
+```
+
+
+# TESTING UNSATISFIABILITY 
+# Formula 1
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0301.cnf') 
+open(con);
+unsat_21 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_21[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_21 <- unsat_21[9:226]
+unsat_21 <- lapply(unsat_21, function(x) x[x != "0"])
+unsat_21 <- lapply(unsat_21, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_21 = transform(unsat_21)
+
+# Check Literal Count 
+count(unsat_21)
+
+close(con)
+
+```
+
+# Formula 2
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0302.cnf') 
+open(con);
+unsat_22 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_22[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_22 <- unsat_22[9:226]
+unsat_22 <- lapply(unsat_22, function(x) x[x != "0"])
+unsat_22 <- lapply(unsat_22, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_22 = transform(unsat_22)
+
+# Check Literal Count 
+count(unsat_22)
+
+close(con)
+
+```
+
+# Formula 3
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0303.cnf') 
+open(con);
+unsat_23 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_23[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_23 <- unsat_23[9:226]
+unsat_23 <- lapply(unsat_23, function(x) x[x != "0"])
+unsat_23 <- lapply(unsat_23, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_23 = transform(unsat_23)
+
+# Check Literal Count 
+count(unsat_23)
+
+close(con)
+
+```
+
+# Formula 4
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0304.cnf') 
+open(con);
+unsat_24 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_24[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_24 <- unsat_24[9:226]
+unsat_24 <- lapply(unsat_24, function(x) x[x != "0"])
+unsat_24 <- lapply(unsat_24, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_24 = transform(unsat_24)
+
+# Check Literal Count 
+count(unsat_24)
+
+close(con)
+
+```
+
+# Formula 5 
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0305.cnf') 
+open(con);
+unsat_25 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_25[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_25 <- unsat_25[9:226]
+unsat_25 <- lapply(unsat_25, function(x) x[x != "0"])
+unsat_25 <- lapply(unsat_25, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_25 = transform(unsat_25)
+
+# Check Literal Count 
+count(unsat_25)
+
+close(con)
+
+```
+
+# Formula 6 
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0306.cnf') 
+open(con);
+unsat_26 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_26[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_26 <- unsat_26[9:226]
+unsat_26 <- lapply(unsat_26, function(x) x[x != "0"])
+unsat_26 <- lapply(unsat_26, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_26 = transform(unsat_26)
+
+# Check Literal Count 
+count(unsat_26)
+
+close(con)
+
+```
+
+# Formula 7
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0307.cnf') 
+open(con);
+unsat_27 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_27[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_27 <- unsat_27[9:226]
+unsat_27 <- lapply(unsat_27, function(x) x[x != "0"])
+unsat_27 <- lapply(unsat_27, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_27 = transform(unsat_27)
+
+# Check Literal Count 
+count(unsat_27)
+
+close(con)
+
+```
+
+# Formula 8 
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0415.cnf') 
+open(con);
+unsat_28 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_28[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_28 <- unsat_28[9:226]
+unsat_28 <- lapply(unsat_28, function(x) x[x != "0"])
+unsat_28 <- lapply(unsat_28, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_28 = transform(unsat_28)
+
+# Check Literal Count 
+count(unsat_28)
+
+close(con)
+
+```
+
+# Formula 9
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0517.cnf') 
+open(con);
+unsat_29 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_29[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_29 <- unsat_29[9:226]
+unsat_29 <- lapply(unsat_29, function(x) x[x != "0"])
+unsat_29 <- lapply(unsat_29, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_29 = transform(unsat_29)
+
+# Check Literal Count 
+count(unsat_29)
+
+close(con)
+
+```
+
+# Formula 10 
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0518.cnf') 
+open(con);
+unsat_30 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_30[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_30 <- unsat_30[9:226]
+unsat_30 <- lapply(unsat_30, function(x) x[x != "0"])
+unsat_30 <- lapply(unsat_30, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_30 = transform(unsat_30)
+
+# Check Literal Count 
+count(unsat_30)
+
+close(con)
+
+```
+
+# Formula 11
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0519.cnf') 
+open(con);
+unsat_31 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_31[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_31 <- unsat_31[9:226]
+unsat_31 <- lapply(unsat_31, function(x) x[x != "0"])
+unsat_31 <- lapply(unsat_31, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_31 = transform(unsat_31)
+
+# Check Literal Count 
+count(unsat_31)
+
+close(con)
+
+```
+
+# Formula 12
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0520.cnf') 
+open(con);
+unsat_32 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_32[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_32 <- unsat_32[9:226]
+unsat_32 <- lapply(unsat_32, function(x) x[x != "0"])
+unsat_32 <- lapply(unsat_32, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_32 = transform(unsat_32)
+
+# Check Literal Count 
+count(unsat_32)
+
+close(con)
+
+```
+
+# Formula 13
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0521.cnf') 
+open(con);
+unsat_33 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_33[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_33 <- unsat_33[9:226]
+unsat_33 <- lapply(unsat_33, function(x) x[x != "0"])
+unsat_33 <- lapply(unsat_33, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_33 = transform(unsat_33)
+
+# Check Literal Count 
+count(unsat_33)
+
+close(con)
+
+```
+
+# Formula 14
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0522.cnf') 
+open(con);
+unsat_34 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_34[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_34 <- unsat_34[9:226]
+unsat_34 <- lapply(unsat_34, function(x) x[x != "0"])
+unsat_34 <- lapply(unsat_34, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_34 = transform(unsat_34)
+
+# Check Literal Count 
+count(unsat_34)
+
+close(con)
+
+```
+
+# Formula 15 
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0523.cnf') 
+open(con);
+unsat_35 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_35[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_35 <- unsat_35[9:226]
+unsat_35 <- lapply(unsat_35, function(x) x[x != "0"])
+unsat_35 <- lapply(unsat_35, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_35 = transform(unsat_35)
+
+# Check Literal Count 
+count(unsat_35)
+
+close(con)
+
+```
+
+# Formula 16 
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0525.cnf') 
+open(con);
+unsat_36 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_36[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_36 <- unsat_36[9:226]
+unsat_36 <- lapply(unsat_36, function(x) x[x != "0"])
+unsat_36 <- lapply(unsat_36, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_36 = transform(unsat_36)
+
+# Check Literal Count 
+count(unsat_36)
+
+close(con)
+
+```
+
+# Formula 17
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0526.cnf') 
+open(con);
+unsat_37 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_37[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_37 <- unsat_37[9:226]
+unsat_37 <- lapply(unsat_37, function(x) x[x != "0"])
+unsat_37 <- lapply(unsat_37, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_37 = transform(unsat_37)
+
+# Check Literal Count 
+count(unsat_37)
+
+close(con)
+
+```
+
+# Formula 18 
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0527.cnf') 
+open(con);
+unsat_38 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_38[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_38 <- unsat_38[9:226]
+unsat_38 <- lapply(unsat_38, function(x) x[x != "0"])
+unsat_38 <- lapply(unsat_38, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_38 = transform(unsat_38)
+
+# Check Literal Count 
+count(unsat_38)
+
+close(con)
+
+```
+
+# Formula 19
+```{r}
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0528.cnf') 
+open(con);
+unsat_39 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_39[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_39 <- unsat_39[9:226]
+unsat_39 <- lapply(unsat_39, function(x) x[x != "0"])
+unsat_39 <- lapply(unsat_39, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_39 = transform(unsat_39)
+
+# Check Literal Count 
+count(unsat_39)
+
+close(con)
+
+```
+
+# Formula 20 
+```{r}
+
+setwd("C:/Users/dmo/Documents/MachineLearning/Project/dimacs/unsat")
+con <- file('uuf50-0550.cnf') 
+open(con);
+unsat_40 <- list();
+current.line <- 1
+while (length(line <- readLines(con, n = 1, warn = FALSE)) > 0) {
+  unsat_40[[current.line]] <- as.integer(unlist(strsplit(line, split=" ")))
+  current.line <- current.line + 1
+} 
+
+# Process Data
+unsat_40 <- unsat_40[9:226]
+unsat_40 <- lapply(unsat_40, function(x) x[x != "0"])
+unsat_40 <- lapply(unsat_40, function(x) x[!is.na(x)])
+
+# Transform to Sparse Matrix
+unsat_40 = transform(unsat_40)
+
+# Check Literal Count 
+count(unsat_40)
+
+close(con)
+
+```
+
