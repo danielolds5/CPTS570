@@ -1,1 +1,1 @@
-# CPTS570
+Dataset: https://www.cs.ubc.ca/~hoos/SATLIB/benchm.html
